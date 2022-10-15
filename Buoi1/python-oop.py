@@ -4,8 +4,10 @@ class Person():
         self.age = age
     def sleep(self):
         print("Person sleep")
-    def sport(slef):
+    def sport(self):
         print("Person running")
+    def eat(self):
+        print("Person eat")
 
 class BKACAD():
     def __init__(self,name,age):
@@ -15,6 +17,8 @@ class BKACAD():
         print("BKACAD study")
     def exam(self):
         print("Exam")
+    def eat(self):
+        print("BKACAD eat")
 # Ke thua
 class Reman1(BKACAD,Person):
     def __init__(self,name,age):
@@ -34,3 +38,4 @@ student2 = Reman2('Vinh',30)
 student1.study()
 student2.study()
 student1.sleep()
+student1.eat()
