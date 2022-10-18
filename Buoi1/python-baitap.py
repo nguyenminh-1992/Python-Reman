@@ -32,12 +32,20 @@ class PythonReman:
         self.age = age
         self.country = country
 #Giong nhau -> For, While
-name1 = input("Nhap ten: ")
-age1 = int(input("Nhap tuoi: "))
-country1 = input("Nhap que quan: ")
 
-student1 = PythonReman(name1,age1,country1)
+#student1 = PythonReman(name1,age1,country1)
+listhocvien = []
 
-n = int(input("Nhap sp luong hoc vien: "))
-
-
+n = int(input("Nhap so luong hoc vien: "))
+j = 1
+while (j <= n):
+    #handling >< hard code
+    name1 = input("Nhap ten: ")
+    age1 = int(input("Nhap tuoi: "))    
+    country1 = input("Nhap que quan: ")
+    j+=1
+    listhocvien.append(PythonReman(name1,age1,country1))
+#Database
+#Show danh sach hoc vien
+for i in listhocvien:
+    print(i.name,i.age,i.country, sep = "--")
