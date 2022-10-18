@@ -1,5 +1,5 @@
 from reman import PythonReman
-
+# C R U D
 class Quanlyhocvien:
 
     listhocvien = []
