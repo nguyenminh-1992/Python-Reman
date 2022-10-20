@@ -28,8 +28,9 @@ class Quanlyhocvien:
             if(i.id == id):
                 self.listhocvien.remove(i)
     
+    def suatthocvien(self,id):  #Sua theo ten va tuoi
 
-    # def suatthocvien(self):
+    def timkiemhocvien(self,name):    
 
 # if __name__ == "__main__":
 #     Quanlyhocvien()
