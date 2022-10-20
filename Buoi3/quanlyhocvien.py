@@ -32,7 +32,7 @@ class Quanlyhocvien:
 #     Quanlyhocvien()
 
 #Test
-student1 = Quanlyhocvien()
-student1.themhocvien()
-student1.hienthihocvien()
+# student1 = Quanlyhocvien()
+# student1.themhocvien()
+# student1.hienthihocvien()
 
