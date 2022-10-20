@@ -22,9 +22,12 @@ class Quanlyhocvien:
     def hienthihocvien(self):
         for i in self.listhocvien:
             print(i.id,i.name,i.age,i.country,i.diemtin,i.diemtienganh,sep=" - ")
-
-    # def xoahocvien(self):
-
+    
+    def xoahocvientheoid(self,id):
+        for i in self.listhocvien:
+            if(i.id == id):
+                self.listhocvien.remove(i)
+    
 
     # def suatthocvien(self):
 

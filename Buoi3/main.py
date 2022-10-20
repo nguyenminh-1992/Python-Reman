@@ -25,7 +25,10 @@ while (True):
     elif (nhap == 3):
         print("Chuc nang sua thong tin hoc vien") 
     elif (nhap == 4):
-        print("Chuc nang xoa hoc vien") 
+        id = int(input("Nhap id hoc vien muon xoa: "))
+        student.xoahocvientheoid(id)
+        print("Da xoa hoc vien")
+        student.hienthihocvien()
     elif (nhap == 0):
         print("Tam biet")
         break
