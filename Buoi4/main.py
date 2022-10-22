@@ -10,6 +10,7 @@ while (True):
     print("| 3. Sua thong tin hoc vien---------|")
     print("| 4. Xoa hoc vien-------------------|")
     print("| 5. Tim kiem hoc vien--------------|")
+    print("| 6. Sap xep hoc vien---------------|")
     print("------------------------------------")
 
     nhap = int(input("Nhap chuc nang muon su dung: "))
@@ -17,6 +18,7 @@ while (True):
         n = int(input("Nhap so hoc vien muon them: "))
         j = 1
         while (j <= n):
+            print("Nhap hoc vien thu {}".format(j))
             student.themhocvien()
             j+=1
             print("Da them xong 1 hoc vien")
@@ -36,6 +38,9 @@ while (True):
     elif (nhap==5):
         nametimkiem = input("Nhap ten muon tim")
         student.timkiemhocvien(nametimkiem)
+    elif (nhap==6):
+        student.sapxephocvien()
+        student.hienthihocvien()
     elif (nhap == 0):
         print("Tam biet")
         break

@@ -33,8 +33,9 @@ class Quanlyhocvien:
 #Hocluc: >5: Gioi, <5: Trungbinh
     
     def hienthihocvien(self):
+        print("{:<8} {:<15} {:<8} {:<12} {:<15} {:<15} {:<15}".format("Id","Ten","Tuoi","Que quan","Diem tin","Diem tieng anh","Hoc luc"))
         for i in self.listhocvien:
-            print(i.id,i.name,i.age,i.country,i.diemtin,i.diemtienganh,i.hocluc,sep=" - ")
+            print("{:<8} {:<15} {:<8} {:<12} {:<15} {:<15} {:<15}".format(i.id,i.name,i.age,i.country,i.diemtin,i.diemtienganh,i.hocluc,sep=" - "))
     
     def xoahocvientheoid(self,id):
         for i in self.listhocvien:
@@ -54,7 +55,12 @@ class Quanlyhocvien:
                 print(i.id,i.name,i.age,i.country,i.diemtin,i.diemtienganh,sep=" - ") 
             else:
                 print("Khong thay nguoi can tim")
-
+    
+    def sapxephocvien(self): #Sap xep theo ten
+        #sort
+        #list.sort(key, reverse=True)
+        self.listhocvien.sort(key=lambda x:x.name, reverse=False)
+ 
 # if __name__ == "__main__":
 #     Quanlyhocvien()
 
