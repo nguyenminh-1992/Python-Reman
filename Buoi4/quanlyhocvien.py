@@ -28,9 +28,19 @@ class Quanlyhocvien:
             if(i.id == id):
                 self.listhocvien.remove(i)
     
-    # def suatthocvien(self,id):  #Sua theo ten va tuoi
+    def suatthocvien(self,idcantim):  #Sua theo ten va tuoi
+        for i in self.listhocvien:
+            if(i.id == idcantim):
+                i.name = input("Nhap ten: ")
+                i.age = int(input("Nhap tuoi: "))
 
-    # def timkiemhocvien(self,name):    
+    def timkiemhocvien(self,nametimkiem): 
+        for i in self.listhocvien:
+            if(i.name == nametimkiem):
+                print("Da tim thay")  
+                print(i.id,i.name,i.age,i.country,i.diemtin,i.diemtienganh,sep=" - ") 
+            else:
+                print("Khong thay nguoi can tim")
 
 # if __name__ == "__main__":
 #     Quanlyhocvien()
