@@ -1,5 +1,5 @@
 class PythonReman:
-    def __init__(self,id,name,age,country,diemtin, diemtienganh):
+    def __init__(self,id,name,age,country,diemtin,diemtienganh):
         self.id = id
         self.name = name
         self.age = age

@@ -11,17 +11,30 @@ class Quanlyhocvien:
     #     self.hienthihocvien()
 
     def themhocvien(self):
-        id = int(input("Nhap id: "))
+        id = self.listhocvien.__len__() + 1
         name = input("Nhap ten: ")
         age = int(input("Nhap tuoi: "))
         country = input("Nhap que quan: ")
         diemtin = float(input("Nhap diem tin: "))
         diemtienganh = float(input("Nhap diem tieng anh: "))
-        self.listhocvien.append(PythonReman(id,name,age,country,diemtin,diemtienganh))
+        diemtrungbinh = float((diemtin + diemtienganh)/2)
+        hocvien = PythonReman(id,name,age,country,diemtin,diemtienganh)
+        if diemtrungbinh > 5:
+            hocvien.hocluc = "Gioi"
+        else:
+            hocvien.hocluc = "Trung binh"
+         #   (id,name,age,country,diemtin,diemtienganh,hocluc)
+        # self.listhocvien.append(PythonReman(id,name,age,country,diemtin,diemtienganh))
+        self.listhocvien.append(hocvien) #PythonReman + hocluc
+        
+        
+#Id tu dong tang
+#Diemtrungbinh = (tin + tieng anh) /2
+#Hocluc: >5: Gioi, <5: Trungbinh
     
     def hienthihocvien(self):
         for i in self.listhocvien:
-            print(i.id,i.name,i.age,i.country,i.diemtin,i.diemtienganh,sep=" - ")
+            print(i.id,i.name,i.age,i.country,i.diemtin,i.diemtienganh,i.hocluc,sep=" - ")
     
     def xoahocvientheoid(self,id):
         for i in self.listhocvien:
