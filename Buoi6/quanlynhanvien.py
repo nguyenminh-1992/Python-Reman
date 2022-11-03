@@ -32,9 +32,9 @@ class Quanlynhanvien:
         else:
             print("Nhap sai")
         
-
-        nhanvien = Nhanvien(id,name,age,country,sex,chucvu1,chamcong)
         chamcong = int(input("Nhap so ngay cong: "))
+        nhanvien = Nhanvien(id,name,age,country,sex,chucvu1,chamcong)
+     
         if (chucvu == "GD"):
             nhanvien.luong = chamcong * 1000000
         elif (chucvu == "TP"):
@@ -48,3 +48,5 @@ class Quanlynhanvien:
         print("{:<8} {:<15} {:<8} {:<12} {:<15} {:<15} {:<15} {:<15}".format("Id","Ten","Tuoi","Que quan","Gioi tinh","Chuc vu","Cham cong","Luong"))
         for i in self.listnhanvien:
             print("{:<8} {:<15} {:<8} {:<12} {:<15} {:<15} {:<15}  {:<15}".format(i.id,i.name,i.age,i.country,i.sex,i.chucvu,i.chamcong,i.luong,sep=" - "))
+
+
