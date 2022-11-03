@@ -13,7 +13,11 @@ while (True):
     print("| 6. Sap xep nhan vien---------------|")
     print("------------------------------------")
 
-    nhap = int(input("Nhap chuc nang muon su dung: "))
+    try:
+        nhap = int(input("Nhap chuc nang muon su dung: "))
+    except:
+        print("Bat buoc phai nhap so")
+   
     if (nhap == 1):
         n = int(input("Nhap so nhan vien muon them: "))
         j = 1
