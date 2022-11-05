@@ -34,7 +34,17 @@ def getdatabyid2(id):
     ketqua = dulieu.fetchall()
     for i in ketqua:
         print(i)
+    
+def getdatabyidandage(id,age):
+    sql = "SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = %s And age = %s"
+    # id = 3
+    dulieu.execute(sql,(id,age))
+    ketqua = dulieu.fetchall()
+    for i in ketqua:
+        print(i)
 
+
+# SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = 2 OR Age = 21;
 
 # getalldata()
 # getalldata2()

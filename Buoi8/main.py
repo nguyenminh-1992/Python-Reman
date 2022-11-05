@@ -1,3 +1,3 @@
 import quanlyhocvien
 
-quanlyhocvien.getdatabyid
+quanlyhocvien.getdatabyid2(1)
