@@ -1,0 +1,3 @@
+import quanlyhocvien
+
+quanlyhocvien.getdatabyid

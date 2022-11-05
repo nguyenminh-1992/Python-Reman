@@ -21,10 +21,25 @@ def getalldata2():
         print(ketqua)
         ketqua = dulieu.fetchone()
 
+def getdatabyid():
+    dulieu.execute("SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = 3")
+    ketqua = dulieu.fetchall()
+    for i in ketqua:
+        print(i)
+
+def getdatabyid2(id):
+    sql = "SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = %s"
+    # id = 3
+    dulieu.execute(sql,(id,))
+    ketqua = dulieu.fetchall()
+    for i in ketqua:
+        print(i)
 
 
 # getalldata()
-getalldata2()
+# getalldata2()
+# getdatabyid()
+getdatabyid2(1)
 
 
 ketnoi.close()
