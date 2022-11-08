@@ -37,7 +37,7 @@ def getdatabyid2(id):
     dulieu.execute(sql,(id,))
     ketqua = dulieu.fetchall()
     for i in ketqua:
-        print(i)
+        return i
     ketnoi.close()
     
 def getdatabyidandage(id,age):
