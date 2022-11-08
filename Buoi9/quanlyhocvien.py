@@ -55,6 +55,12 @@ def updatedata():
     ketnoi.commit()
     print("Da update thanh cong")
 
+def deletedata():
+    sql = "DELETE FROM Quan_ly_hoc_vien.Hocvien WHERE Country = 'Nha Trang'"
+    dulieu.execute(sql)
+    ketnoi.commit()
+    print("Da xoa du lieu")
+
 
 # SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = 2 OR Age = 21;
 
@@ -63,7 +69,9 @@ def updatedata():
 # getdatabyid()
 # getdatabyid2(1)
 # createdata()
-updatedata()
+# updatedata()
+deletedata()
+
 
 
 ketnoi.close()
