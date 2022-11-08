@@ -14,18 +14,22 @@ def getalldata():
    for i in ketqua:
     print(i)
 
+    ketnoi.close()
+
 def getalldata2():
     dulieu.execute("SELECT * FROM Quan_ly_hoc_vien.Hocvien")
     ketqua = dulieu.fetchone()
     while ketqua is not None:
         print(ketqua)
         ketqua = dulieu.fetchone()
+    ketnoi.close()
 
 def getdatabyid():
     dulieu.execute("SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = 3")
     ketqua = dulieu.fetchall()
     for i in ketqua:
         print(i)
+    ketnoi.close()
 
 def getdatabyid2(id):
     sql = "SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = %s"
@@ -34,6 +38,7 @@ def getdatabyid2(id):
     ketqua = dulieu.fetchall()
     for i in ketqua:
         print(i)
+    ketnoi.close()
     
 def getdatabyidandage(id,age):
     sql = "SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = %s And age = %s"
@@ -42,24 +47,28 @@ def getdatabyidandage(id,age):
     ketqua = dulieu.fetchall()
     for i in ketqua:
         print(i)
+    ketnoi.close()
 
 def createdata():
-    sql = "INSERT INTO Quan_ly_hoc_vien.`Hocvien`(Id,`Name`,Age, Country,English,Information) VALUES (6,'Nguyen Van F',25,'Sapa',7,6)"
+    sql = "INSERT INTO Quan_ly_hoc_vien.`Hocvien`(Id,`Name`,Age, Country,English,Information) VALUES (7,'Nguyen Van G',29,'Nha Trang',7,6)"
     dulieu.execute(sql)
     ketnoi.commit()
     print("Da them thanh cong")
+    ketnoi.close()
 
 def updatedata():
     sql = "UPDATE Quan_ly_hoc_vien.Hocvien SET Age = 26 WHERE Id = 6"
     dulieu.execute(sql)
     ketnoi.commit()
     print("Da update thanh cong")
+    ketnoi.close()
 
 def deletedata():
     sql = "DELETE FROM Quan_ly_hoc_vien.Hocvien WHERE Country = 'Nha Trang'"
     dulieu.execute(sql)
     ketnoi.commit()
     print("Da xoa du lieu")
+    ketnoi.close()
 
 
 # SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = 2 OR Age = 21;
@@ -70,8 +79,8 @@ def deletedata():
 # getdatabyid2(1)
 # createdata()
 # updatedata()
-deletedata()
+# deletedata()
 
 
 
-ketnoi.close()
+# ketnoi.close()
