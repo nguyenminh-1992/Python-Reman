@@ -49,6 +49,12 @@ def createdata():
     ketnoi.commit()
     print("Da them thanh cong")
 
+def updatedata():
+    sql = "UPDATE Quan_ly_hoc_vien.Hocvien SET Age = 26 WHERE Id = 6"
+    dulieu.execute(sql)
+    ketnoi.commit()
+    print("Da update thanh cong")
+
 
 # SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = 2 OR Age = 21;
 
@@ -56,7 +62,8 @@ def createdata():
 # getalldata2()
 # getdatabyid()
 # getdatabyid2(1)
-createdata()
+# createdata()
+updatedata()
 
 
 ketnoi.close()
