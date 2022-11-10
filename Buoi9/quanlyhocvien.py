@@ -9,12 +9,23 @@ ketnoi = connectsql.getConnection()
 dulieu = ketnoi.cursor()
 
 def getalldata():
-   dulieu.execute("SELECT * FROM Quan_ly_hoc_vien.Hocvien")
-   ketqua = dulieu.fetchall()
-   for i in ketqua:
-    print(i)
-
-    ketnoi.close()
+    diemTB = []
+    dulieu.execute("SELECT * FROM Quan_ly_hoc_vien.Hocvien")
+    ketqua = dulieu.fetchall()
+    for diem in ketqua:
+        i,j = diem[-2:]
+        dtb = (i+j)/2
+        if dtb>=7.5:
+            dt = list(diem) + [dtb] + ['Gioi']
+        elif 5<=dtb<=7:
+            dt = list(diem) + [dtb] + ['Trung binh']
+        else:
+            dt = list(diem) + [dtb] + ['Yeu']
+        diemTB.append(tuple(dt))
+    
+    for i in diemTB:
+        print(i)
+    # ketnoi.close()
 
 def getalldata2():
     dulieu.execute("SELECT * FROM Quan_ly_hoc_vien.Hocvien")
@@ -29,7 +40,7 @@ def getdatabyid():
     ketqua = dulieu.fetchall()
     for i in ketqua:
         print(i)
-    ketnoi.close()
+    # ketnoi.close()
 
 def getdatabyid2(id):
     sql = "SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = %s"
@@ -38,7 +49,7 @@ def getdatabyid2(id):
     ketqua = dulieu.fetchall()
     for i in ketqua:
         return i
-    ketnoi.close()
+    # ketnoi.close()
     
 def getdatabyidandage(id,age):
     sql = "SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = %s And age = %s"
@@ -47,28 +58,28 @@ def getdatabyidandage(id,age):
     ketqua = dulieu.fetchall()
     for i in ketqua:
         print(i)
-    ketnoi.close()
+    # ketnoi.close()
 
 def createdata():
     sql = "INSERT INTO Quan_ly_hoc_vien.`Hocvien`(Id,`Name`,Age, Country,English,Information) VALUES (7,'Nguyen Van G',29,'Nha Trang',7,6)"
     dulieu.execute(sql)
     ketnoi.commit()
     print("Da them thanh cong")
-    ketnoi.close()
+    # ketnoi.close()
 
 def updatedata():
     sql = "UPDATE Quan_ly_hoc_vien.Hocvien SET Age = 26 WHERE Id = 6"
     dulieu.execute(sql)
     ketnoi.commit()
     print("Da update thanh cong")
-    ketnoi.close()
+    # ketnoi.close()
 
 def deletedata():
     sql = "DELETE FROM Quan_ly_hoc_vien.Hocvien WHERE Country = 'Nha Trang'"
     dulieu.execute(sql)
     ketnoi.commit()
     print("Da xoa du lieu")
-    ketnoi.close()
+    # ketnoi.close()
 
 
 # SELECT * FROM Quan_ly_hoc_vien.Hocvien WHERE Id = 2 OR Age = 21;
