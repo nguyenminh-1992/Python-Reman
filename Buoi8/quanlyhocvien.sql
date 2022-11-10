@@ -7,7 +7,7 @@ USE Quan_ly_hoc_vien;
 DROP TABLE IF EXISTS `Hocvien`;
 CREATE TABLE `Hocvien`(
 	Id						TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    `Name`					VARCHAR(50) NOT NULL UNIQUE KEY,
+    `Name`					VARCHAR(50) NOT NULL ,
     Age						INT UNSIGNED NOT NULL,
     Country					NVARCHAR(50) NOT NULL,
     English 				INT UNSIGNED NOT NULL,
