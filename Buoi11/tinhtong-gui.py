@@ -32,15 +32,50 @@ textbox3 = tkinter.Entry(giaodien,width=30,textvariable=dulieu3)
 textbox3.grid(column=2,row=3)
 textbox3.focus()
 
-def sukien():
+# def sukien():
+#     tong = int(dulieu1.get()) + int(dulieu2.get())
+#     dulieu3.set(tong)
+#     dulieu1.set("")
+#     dulieu2.set("")
+
+# button = tkinter.Button(giaodien,text="Ket qua",bg="blue",fg="black",command= sukien)
+# button.grid(column=1,row=4)
+
+def cong():
     tong = int(dulieu1.get()) + int(dulieu2.get())
     dulieu3.set(tong)
     dulieu1.set("")
     dulieu2.set("")
 
-button = tkinter.Button(giaodien,text="Ket qua",bg="blue",fg="black",command= sukien)
+def tru():
+    hieu = int(dulieu1.get()) - int(dulieu2.get())
+    dulieu3.set(hieu)
+    dulieu1.set("")
+    dulieu2.set("")
+
+def nhan():
+    tich = int(dulieu1.get()) * int(dulieu2.get())
+    dulieu3.set(tich )
+    dulieu1.set("")
+    dulieu2.set("")
+
+def chia():
+    thuong = int(dulieu1.get()) / int(dulieu2.get())
+    dulieu3.set(thuong)
+    dulieu1.set("")
+    dulieu2.set("")
+
+button = tkinter.Button(giaodien,text="+",bg="blue",fg="black",command= cong)
+button.grid(column=0,row=4)
+
+button = tkinter.Button(giaodien,text="-",bg="blue",fg="black",command= tru)
 button.grid(column=1,row=4)
 
+button = tkinter.Button(giaodien,text="x",bg="blue",fg="black",command= nhan)
+button.grid(column=0,row=5)
+
+button = tkinter.Button(giaodien,text=":",bg="blue",fg="black",command= chia)
+button.grid(column=1,row=5)
 
 
 giaodien.mainloop()
