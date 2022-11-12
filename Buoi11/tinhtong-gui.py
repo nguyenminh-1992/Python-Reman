@@ -1,8 +1,8 @@
 import tkinter
-
+#Tao phan giao dien
 giaodien = tkinter.Tk()
 giaodien.title("Tinh tong hai so nguyen")
-giaodien.geometry('500x400')
+giaodien.geometry('500x200')
 
 label1 = tkinter.Label(giaodien,text="Tính tổng hai số nguyên",fg="black",bg="white")
 label1.grid(column=2,row=0)
@@ -16,17 +16,31 @@ label3.grid(column=0,row=2)
 label4 = tkinter.Label(giaodien,text="Ket qua: ",fg="black",bg="white")
 label4.grid(column=0,row=3)
 
-textbox1 = tkinter.Entry(giaodien,width=30)
+#Phan de lam viec
+dulieu1 = tkinter.IntVar()
+textbox1 = tkinter.Entry(giaodien,width=30,textvariable=dulieu1)
 textbox1.grid(column=2,row=1)
+textbox1.focus()
 
-textbox2 = tkinter.Entry(giaodien,width=30)
+dulieu2 = tkinter.IntVar()
+textbox2 = tkinter.Entry(giaodien,width=30,textvariable=dulieu2)
 textbox2.grid(column=2,row=2)
+textbox2.focus()
 
-textbox3 = tkinter.Entry(giaodien,width=30)
+dulieu3 = tkinter.IntVar()
+textbox3 = tkinter.Entry(giaodien,width=30,textvariable=dulieu3)
 textbox3.grid(column=2,row=3)
+textbox3.focus()
 
-button = tkinter.Button(giaodien,text="Ket qua",bg="blue",fg="black")
+def sukien():
+    tong = int(dulieu1.get()) + int(dulieu2.get())
+    dulieu3.set(tong)
+    dulieu1.set("")
+    dulieu2.set("")
+
+button = tkinter.Button(giaodien,text="Ket qua",bg="blue",fg="black",command= sukien)
 button.grid(column=1,row=4)
+
 
 
 giaodien.mainloop()
